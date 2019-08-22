@@ -1,0 +1,8 @@
+<div class="weatherDisplay">
+        <img [src]="imageSource" width=50>
+        <div >{{cityName}} </div>
+        <div class="day">{{dayName| date: 'dd/MM/yyyy'}} </div>
+        <div class="day">{{dayName| date: 'EEEE'}} </div>
+        <div >Temp: {{temperture}}</div>
+        <div>{{weatherText}}</div>
+    </div>

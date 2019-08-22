@@ -1,0 +1,26 @@
+.weatherDisplay{
+    width: 130px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 3px;
+    height: 200px;
+    border: 3px solid blue;
+    background: rgba(204, 204, 204, 0.7);
+    overflow: auto;
+
+    
+}
+.weatherDisplay:hover{  
+    background: rgba(120, 120, 120, 0.9);
+    }
+
+    .weatherDisplay > *{
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+.day{
+    width:100%;
+}

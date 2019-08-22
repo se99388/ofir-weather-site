@@ -1,0 +1,152 @@
+[
+    {
+      "Version": 1,
+      "Key": "213225",
+      "Type": "City",
+      "Rank": 30,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "IL",
+        "LocalizedName": "Israel"
+      },
+      "AdministrativeArea": {
+        "ID": "JM",
+        "LocalizedName": "Jerusalem"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "250835",
+      "Type": "City",
+      "Rank": 65,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "NZ",
+        "LocalizedName": "New Zealand"
+      },
+      "AdministrativeArea": {
+        "ID": "MWT",
+        "LocalizedName": "Manawatu-Wanganui"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "128752",
+      "Type": "City",
+      "Rank": 65,
+      "LocalizedName": "Jerusalen",
+      "Country": {
+        "ID": "SV",
+        "LocalizedName": "El Salvador"
+      },
+      "AdministrativeArea": {
+        "ID": "PA",
+        "LocalizedName": "La Paz"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "32864",
+      "Type": "City",
+      "Rank": 75,
+      "LocalizedName": "Jerusalen",
+      "Country": {
+        "ID": "BO",
+        "LocalizedName": "Bolivia"
+      },
+      "AdministrativeArea": {
+        "ID": "B",
+        "LocalizedName": "El Beni"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "221483",
+      "Type": "City",
+      "Rank": 75,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "JM",
+        "LocalizedName": "Jamaica"
+      },
+      "AdministrativeArea": {
+        "ID": "10",
+        "LocalizedName": "Westmoreland"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "1376675",
+      "Type": "City",
+      "Rank": 85,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "CZ",
+        "LocalizedName": "Czechia"
+      },
+      "AdministrativeArea": {
+        "ID": "20",
+        "LocalizedName": "Central Bohemian"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "1062990",
+      "Type": "City",
+      "Rank": 85,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "MX",
+        "LocalizedName": "Mexico"
+      },
+      "AdministrativeArea": {
+        "ID": "CHP",
+        "LocalizedName": "Chiapas"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "1062987",
+      "Type": "City",
+      "Rank": 85,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "MX",
+        "LocalizedName": "Mexico"
+      },
+      "AdministrativeArea": {
+        "ID": "DUR",
+        "LocalizedName": "Durango"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "1062988",
+      "Type": "City",
+      "Rank": 85,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "MX",
+        "LocalizedName": "Mexico"
+      },
+      "AdministrativeArea": {
+        "ID": "JAL",
+        "LocalizedName": "Jalisco"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "2115414",
+      "Type": "City",
+      "Rank": 85,
+      "LocalizedName": "Jerusalem",
+      "Country": {
+        "ID": "US",
+        "LocalizedName": "United States"
+      },
+      "AdministrativeArea": {
+        "ID": "OH",
+        "LocalizedName": "Ohio"
+      }
+    }
+  ]

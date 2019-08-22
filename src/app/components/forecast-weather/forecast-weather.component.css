@@ -1,0 +1,10 @@
+.main{
+    background-color:  pink;
+    width: 100%;
+}
+
+.forecastBoard{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid orange;
+}

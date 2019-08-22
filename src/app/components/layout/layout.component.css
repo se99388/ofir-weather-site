@@ -1,0 +1,11 @@
+.container-fluid{
+    border: 1px solid black;
+}
+
+.row{
+    border: 1px solid blue;
+}
+
+.row > *{
+    border: 1px solid red;
+}

@@ -1,0 +1,7 @@
+<div class="weatherDisplay">
+        <img [src]="imageSource" width=50>
+        <div class="day">{{dayName| date: 'dd/MM/yyyy'}} </div>
+        <div class="day">{{dayName| date: 'EEEE'}} </div>
+        <div >Min: {{min}}</div>
+        <div>Max: {{max}}</div>
+    </div>
