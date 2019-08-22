@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
     }
 
     public search() {
+       
         this.searchService.getSearchByCity(this.searchValue).subscribe(res => {
             this.filteredOptions = res.map((item) => {
                 return {

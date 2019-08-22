@@ -10,15 +10,9 @@ export class Reducer {
                 break;
             case ActionType.getCurrentWeather:
                 newStore.currentWeatherDetails = action.payload;
-                console.log("store:-currentWeatherDetails", newStore.currentWeatherDetails)
-                console.log("store-allFavoriteCities:", newStore.allFavoriteCities)
                 break;
-            // case ActionType.getAllFavoriteCities:
-            //     newStore.allFavoriteCities = action.payload;
-            //     // console.log("store-allFavoriteCities:", newStore.allFavoriteCities)
-            //     break;
             case ActionType.addFavoriteCity:
-            // newStore.allFavoriteCities = [...newStore.allFavoriteCities, action.payload]
+            // newStore.allFavoriteCities = [...newStore.allFavoriteCities, action.payload];
                 newStore.allFavoriteCities.push(action.payload);
                 // console.log("store-addFavoriteCity:", newStore.allFavoriteCities)
                 break;

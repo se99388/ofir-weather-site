@@ -48,18 +48,20 @@ export class ForecastWeatherComponent implements OnInit, OnDestroy {
         });  
     }
 
-    public reduxStateIsExistInFavorites(){
-       
+    public reduxStateIsExistInFavorites(){     
         this.allFavoriteCities = this.redux.getState().allFavoriteCities;
-        for (let i=0; i<this.allFavoriteCities.length; i++){
-            if (this.allFavoriteCities[i].id === this.currentWeatherDetails.id){
-                this.existInFavorites = true;
-                break;
-            }
-                this.existInFavorites = false;
+        this.isIdExist(this.allFavoriteCities)
+    }
 
-        }    
-        console.log("checking", this.existInFavorites, this.currentWeatherDetails.id, this.allFavoriteCities);   
+    public isIdExist(allFavoriteCities){
+        console.log("checking", this.existInFavorites, this.currentWeatherDetails.id, this.allFavoriteCities);
+        for (let i=0; i<allFavoriteCities.length; i++){
+            if (this.allFavoriteCities[i].id === this.currentWeatherDetails.id){         
+                return this.existInFavorites = true;
+            }
+        }   
+        return this.existInFavorites = false; 
+         
     }
     public addToFavorites(){
        
