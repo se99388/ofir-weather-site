@@ -1,5 +1,7 @@
 .container-fluid{
     border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
 }
 
 .row{
@@ -8,4 +10,10 @@
 
 .row > *{
     border: 1px solid red;
+    
+}
+main{
+    border: 5px solid blue;
+    padding: 0px;
+    margin: 0px;
 }
