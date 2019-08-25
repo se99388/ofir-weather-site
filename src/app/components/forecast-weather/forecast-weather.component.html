@@ -1,27 +1,41 @@
-
 <div class="container-fluid">
-    <div class="row">
-        <app-search></app-search>
-    </div>
-    <div class="row">
-        <div *ngIf="currentWeatherDetails" class="CurrentDisplay col-sm-6">
-            <div class="day">{{currentWeatherDetails.name}} </div>
-            <div class="day">{{currentWeatherDetails.date| date: 'dd/MM/yyyy'}} {{currentWeatherDetails.date| date:"HH:mm"}} </div>
-            <div class="day">{{currentWeatherDetails.date| date: 'EEEE'}} </div>
-            <div> Temp {{currentWeatherDetails.temperture}}</div>
-            <div> {{currentWeatherDetails.weatherText}}</div>
-            <img src="https://vortex.accuweather.com/adc2010/images/slate/icons/{{currentWeatherDetails.icon}}.svg" width=100>
+    <div class="row  align-items-center">
+        <div class="col-sm-3">
+            <a routerLink="">
+                <img class="heart" *ngIf="!this.existInFavorites" (click)="addToFavorites()" src="../../../assets/images/heart-clear.png">
+            </a>
+            <a routerLink="">
+                <img class="heart" *ngIf="this.existInFavorites" (click)="RemoveFromFavorites()" src="../../../assets/images/heart-filled.png">
+            </a>
         </div>
-        <div class="offset-sm-3 col-sm-3">
-            <button *ngIf="!this.existInFavorites" (click)="addToFavorites()">Add to favorites</button>
-            <button *ngIf="this.existInFavorites" (click)="RemoveFromFavorites()">Remove from favorites</button>
+        <app-search class="col-sm-6"></app-search>
+        <app-temp-unit-change class="offset-sm-1 col-sm-2"></app-temp-unit-change>
+    </div>
+    <div class="row main">
+        <div class="col-12 currentWeather">
+            <div *ngIf="currentWeatherDetails">
+                <div class="day name">{{currentWeatherDetails.name}} </div>
+                <div class="CurrentDisplay">
+                    <div>
+                        <div class="day">{{currentWeatherDetails.date| date: 'dd/MM/yyyy'}} {{currentWeatherDetails.date| date:"HH:mm"}} </div>
+                        <div class="day">{{currentWeatherDetails.date| date: 'EEEE'}} </div>
+                        <div> {{currentWeatherDetails.temperture | number : '1.1-1'}} ° {{currentWeatherDetails.tempUnit}}</div>
+                        <div> {{currentWeatherDetails.weatherText}}</div>
+                    </div>
+                    <div>
+                        <img src="https://vortex.accuweather.com/adc2010/images/slate/icons/{{currentWeatherDetails.icon}}.svg" width=100>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12">
+            <div class="forecastBoard col-12">
+                <app-display-weather *ngFor="let f of forecastDetails" imageSource="https://vortex.accuweather.com/adc2010/images/slate/icons/{{f.Day.Icon}}.svg"
+                    [dayName]="f.Date" [min]="f.Temperature.Minimum.Value" [max]="f.Temperature.Maximum.Value" [tempUnit]="f.Temperature.Maximum.Unit"></app-display-weather>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="forecastBoard col-12">
-            <app-display-weather *ngFor="let f of forecastDetails" imageSource="https://vortex.accuweather.com/adc2010/images/slate/icons/{{f.Day.Icon}}.svg"
-                [dayName]="f.Date" [min]="f.Temperature.Minimum.Value" [max]="f.Temperature.Maximum.Value"></app-display-weather>
-        </div>
-    </div>
+
 
 </div>

@@ -3,3 +3,11 @@
     flex-wrap: wrap;
     border: 1px solid orange;
 }
+
+.main{
+    height: 100%;
+    background-image: url('../../../assets/images/sun1.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+}

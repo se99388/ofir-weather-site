@@ -1,19 +1,17 @@
 .container-fluid{
-    border: 1px solid black;
     padding: 0px;
     margin: 0px;
+    font-family: 'Gamja Flower', cursive;
+    background:#e6faff;
+    height: 100%;
+    border: 3px solid black;
 }
 
 .row{
-    border: 1px solid blue;
+    margin: 0px;
 }
 
-.row > *{
-    border: 1px solid red;
-    
-}
 main{
-    border: 5px solid blue;
-    padding: 0px;
-    margin: 0px;
+    border: 3px solid white;
+    padding: 0px;  
 }

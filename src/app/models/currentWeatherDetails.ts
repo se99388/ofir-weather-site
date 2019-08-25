@@ -5,7 +5,8 @@ export class CurrentWeatherDetails {
         public date?: string,
         public temperture?: number,
         public weatherText?: string,
-        public icon?: string
+        public icon?: string,
+        public tempUnit?: string
     ){}
     
 

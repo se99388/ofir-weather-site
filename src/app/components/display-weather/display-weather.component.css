@@ -4,17 +4,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
-    margin: 3px;
+    margin: 10px;
     height: 200px;
     border: 3px solid blue;
     background: rgba(204, 204, 204, 0.7);
     overflow: auto;
-
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px;
     
 }
-.weatherDisplay:hover{  
-    background: rgba(120, 120, 120, 0.9);
-    }
 
     .weatherDisplay > *{
         text-align: center;
@@ -23,4 +21,10 @@
     
 .day{
     width:100%;
+}
+
+.imgDiv{
+    width:100%;
+    background: rgba(120, 120, 120, 0.7);
+    border-radius: 10px;
 }

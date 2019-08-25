@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { SearchService } from '../../services/search.service';
 import { City } from '../../models/city';
 import { CurrentWeatherService } from '../../services/current-weather.service';
+import { ErrMessageService } from '../../services/err-message.service';
+import { Error } from '../../models/err';
 
 @Component({
     selector: 'app-search',
@@ -15,51 +17,52 @@ export class SearchComponent implements OnInit {
     myControl = new FormControl();
     filteredOptions: City[];
     public debounce: any;
-    constructor(private searchService: SearchService, private currentWeatherService: CurrentWeatherService) { }
+    public errMessage = new Error();
+    constructor(private searchService: SearchService, private currentWeatherService: CurrentWeatherService, private errMessageService: ErrMessageService) { }
 
     ngOnInit() {
         this.debounce = this.debounceFn();
     }
 
     public search() {
-       if (this.searchValue){
-        this.debounce(this.getApiSearch);
-       }     
-    }
-    
-    public debounceFn = () =>{
-        let idSetTimeout;
-        return function (getApi){
-            clearTimeout(idSetTimeout);
-            idSetTimeout = setTimeout(getApi,1000);
+        if (this.searchValue) {
+            this.debounce(this.getApiSearch);
         }
-    }  
-
-    public getApiSearch = ()=> {
-        console.log("this.searchValue",this.searchValue);
-        this.searchService.getSearchByCity(this.searchValue).subscribe(res => {
-            this.filteredOptions = res.map((item) => {
-                return {
-                    name: item.LocalizedName + ", " + item.Country.LocalizedName,
-                    id: item.Key
-                };
-            });
-            console.log(this.filteredOptions);
-        });
     }
-    // public search() {
-    //     console.log("this.searchValue",this.searchValue);
-    //     this.searchService.getSearchByCity(this.searchValue).subscribe(res => {
-    //         this.filteredOptions = res.map((item) => {
-    //             return {
-    //                 name: item.LocalizedName + ", " + item.Country.LocalizedName,
-    //                 id: item.Key
-    //             };
 
-    //         });
-    //         console.log(this.filteredOptions);
-    //     });
-    // }
+    public debounceFn = () => {
+        let idSetTimeout;
+        return function (getApi) {
+            if (this.searchValue) {
+                clearTimeout(idSetTimeout);
+                idSetTimeout = setTimeout(getApi, 1000);
+            }
+        }
+    }
+
+    public getApiSearch = () => {
+        console.log("this.searchValue", this.searchValue);
+        this.searchService.getSearchByCity(this.searchValue).subscribe(res => {
+            if (res) {
+                this.filteredOptions = res.map((item) => {
+                    return {
+                        name: item.LocalizedName + ", " + item.Country.LocalizedName,
+                        id: item.Key
+                    };
+                });
+            }
+            else {
+                this.filteredOptions = null;
+            }
+
+            console.log(this.filteredOptions);
+        }, err => {
+            this.errMessage.text = err.statusText;
+            this.errMessage.message = err.message;
+            this.errMessageService.openModal(this.errMessage);
+        });       
+    }
+
 
     public Selected(cityId: number, cityName: string): void {
         console.log(cityId, cityName)

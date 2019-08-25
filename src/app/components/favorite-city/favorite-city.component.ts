@@ -19,6 +19,9 @@ export class FavoriteCityComponent implements OnInit {
     temperture: number;
     
     @Input()
+    tempUnit: number;
+
+    @Input()
     weatherText: string;
     
   constructor() { }

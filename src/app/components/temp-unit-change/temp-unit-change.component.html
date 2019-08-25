@@ -1,0 +1,2 @@
+<button *ngIf = "!this.redux.getState().isCelsius" (click)="changeToCelcius()"><img src="../../../assets//images/c.png"></button>
+<button *ngIf = "this.redux.getState().isCelsius"  (click)="changeToFahrenheit()"><img src="../../../assets//images/f.png"></button>

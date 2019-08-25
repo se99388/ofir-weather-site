@@ -3,6 +3,6 @@
         <div >{{cityName}} </div>
         <div class="day">{{dayName| date: 'dd/MM/yyyy'}} </div>
         <div class="day">{{dayName| date: 'EEEE'}} </div>
-        <div >Temp: {{temperture}}</div>
+        <div >{{temperture| number : '1.0-1'}} ° {{tempUnit}}</div>
         <div>{{weatherText}}</div>
     </div>

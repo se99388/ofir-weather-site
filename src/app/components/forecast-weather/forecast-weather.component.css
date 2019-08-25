@@ -1,11 +1,41 @@
 
 .container-fluid{
-    background-color:  pink;
+    background-color:#b3f0ff;
 
 }
-
+.row{
+    border: 2px solid white;
+}
 .forecastBoard{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    border: 1px solid orange;
+}
+
+
+.heart:hover{
+    width: 53px;
+}
+
+.main{
+    height: 100%;
+    background-image: url('../../../assets/images/sun1.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+.currentWeather{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.name{
+    text-decoration-line: underline;
+    font-size: 30px;
+}
+.CurrentDisplay{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

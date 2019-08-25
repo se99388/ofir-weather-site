@@ -20,7 +20,8 @@ min: number;
 max: number;
 
 @Input()
-id: string;
+tempUnit: string;
+
   constructor() { }
 
   ngOnInit() {
