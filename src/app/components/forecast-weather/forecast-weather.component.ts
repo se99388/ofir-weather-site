@@ -55,7 +55,6 @@ export class ForecastWeatherComponent implements OnInit, OnDestroy {
     }
 
     public isIdExist(allFavoriteCities){
-        console.log("checking", this.existInFavorites, this.currentWeatherDetails.id, this.allFavoriteCities);
         for (let i=0; i<allFavoriteCities.length; i++){
             if (this.allFavoriteCities[i].id === this.currentWeatherDetails.id){         
                 return this.existInFavorites = true;

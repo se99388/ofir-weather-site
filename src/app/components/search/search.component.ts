@@ -54,7 +54,6 @@ export class SearchComponent implements OnInit {
                 this.filteredOptions = null;
             }
 
-            console.log(this.filteredOptions);
         }, err => {
             this.errMessage.text = err.statusText;
             this.errMessage.message = err.message;
@@ -64,7 +63,6 @@ export class SearchComponent implements OnInit {
 
 
     public Selected(cityId: number, cityName: string): void {
-        console.log(cityId, cityName)
         this.currentWeatherService.addCurrentWeatherByCityId(cityId, cityName);
 
     }

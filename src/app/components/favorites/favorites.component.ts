@@ -40,7 +40,6 @@ export class FavoritesComponent implements OnInit {
         }
     }
     public getForecastWeather(cityId, cityName) {
-        console.log(cityId, cityName)
         this.currentWeatherService.addCurrentWeatherByCityId(cityId, cityName);
         this.router.navigate(['../forecast-weather']);
 

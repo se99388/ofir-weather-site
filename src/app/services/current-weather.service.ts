@@ -21,14 +21,6 @@ export class CurrentWeatherService {
 
     public addCurrentWeatherByCityId(cityId: number, cityName: string): void {
 
-        //lizet
-            // if (this.redux.getState().isCelsius){
-            //     this.url = "http://dataservice.accuweather.com/currentconditions/v1/" + cityId + "?apikey=uchRUwleT0NqUwf1HeNnke3AJKWALprI&metric=true"
-            // }
-            // else{
-            //     this.url = "http://dataservice.accuweather.com/currentconditions/v1/" + cityId + "?apikey=uchRUwleT0NqUwf1HeNnke3AJKWALprI&metric=false"
-            // }
-        //ofir
         if (this.redux.getState().isCelsius){
             this.url = "http://dataservice.accuweather.com/currentconditions/v1/" + cityId + "?apikey=jeZErwCeBnkCeg2VqhYTMOchhcFIDnVp&metric=true"
         }
@@ -37,7 +29,6 @@ export class CurrentWeatherService {
         }
 
         this.httpClient.get<any>(this.url).subscribe((response) => {
-        // this.httpClient.get<any>("../../assets/jerusalem.json").subscribe((response) => {
             this.currentWeatherDetails =  this.currentWeatherPlacement(response, cityId, cityName);
 
             const action = {
@@ -47,7 +38,6 @@ export class CurrentWeatherService {
             this.redux.dispatch(action);
             this.forecastWeatherService.getForecastWeatherByCityId(this.currentWeatherDetails.id, this.redux.getState().isCelsius);
         }, err => {
-            console.log(err)
             this.errMessage.text = err.statusText;
             this.errMessage.message = err.message;
             this.errMessageService.openModal(this.errMessage);

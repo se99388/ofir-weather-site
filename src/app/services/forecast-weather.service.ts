@@ -17,12 +17,8 @@ export class ForecastWeatherService {
 
     public getForecastWeatherByCityId(cityId: number, isCelsius): void {
 
-        //lizet
-        //   this.httpClient.get<any>("http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cityId + "?apikey=uchRUwleT0NqUwf1HeNnke3AJKWALprI&metric="+isCelsius).subscribe((defualtWeatherRes)=>{
-        //ofir
          this.httpClient.get<any>("http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cityId + "?apikey=jeZErwCeBnkCeg2VqhYTMOchhcFIDnVp&metric="+isCelsius).subscribe((defualtWeatherRes)=>{
 
-        // this.httpClient.get<any>("../../assets/forecast.json").subscribe((defualtWeatherRes) => {
             this.forecastDetails = defualtWeatherRes.DailyForecasts;
 
             const action = {

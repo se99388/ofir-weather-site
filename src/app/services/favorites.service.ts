@@ -17,7 +17,6 @@ export class FavoritesService {
     constructor(private redux: NgRedux<Store>, private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 
     public addCityToFavorites(favCity: CurrentWeatherDetails): void {
-        console.log("favCity", favCity)
         const action = {
             type: ActionType.addFavoriteCity,
             payload: { ...favCity }
@@ -27,7 +26,6 @@ export class FavoritesService {
     }
 
     public removeCityFromFavorites(favCity: CurrentWeatherDetails): void {
-        console.log("favCity", favCity)
         const action = {
             type: ActionType.deleteFavoriteCity,
             payload: { ...favCity }
@@ -37,7 +35,6 @@ export class FavoritesService {
     }
 
     public addAllFavoriteCities(favCities: CurrentWeatherDetails[]): void {
-        console.log("favCity", favCities)
         const action = {
             type: ActionType.addAllFavoriteCities,
             payload: favCities
