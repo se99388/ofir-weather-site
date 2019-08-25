@@ -1,7 +1,11 @@
 .favoritesBoard{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid orange;
+    justify-content: center;   
+}
+
+.favoritesBoard > *{
+  margin: 3%;
 }
 
 .main{

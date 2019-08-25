@@ -5,8 +5,6 @@ import { Store } from '../redux/store';
 import { ActionType } from '../redux/action';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FavCity } from '../models/favCity';
-import { CurrentWeatherService } from './current-weather.service';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
@@ -53,7 +51,7 @@ export class FavoritesService {
         //lizet
         // return this.httpClient.get<any>("http://dataservice.accuweather.com/currentconditions/v1/"+ cityId +"?apikey=uchRUwleT0NqUwf1HeNnke3AJKWALprI&metric="+ this.isCelsius)
         //ofir
-        // return this.httpClient.get<any>("http://dataservice.accuweather.com/currentconditions/v1/" + cityId + "?apikey=jeZErwCeBnkCeg2VqhYTMOchhcFIDnVp&metric="+ this.isCelsius);
-        return this.httpClient.get<any>("../../assets/jerusalem.json");
+        return this.httpClient.get<any>("http://dataservice.accuweather.com/currentconditions/v1/" + cityId + "?apikey=jeZErwCeBnkCeg2VqhYTMOchhcFIDnVp&metric="+ this.isCelsius);
+        // return this.httpClient.get<any>("../../assets/jerusalem.json");
     }
 }

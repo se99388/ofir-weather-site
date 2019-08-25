@@ -1,6 +1,11 @@
 
 .container-fluid{
     background-color:#b3f0ff;
+    height: 100%;
+    background-image: url('../../../assets/images/sun1.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
 
 }
 .row{
@@ -10,6 +15,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 2%;
 }
 
 
@@ -17,13 +23,6 @@
     width: 53px;
 }
 
-.main{
-    height: 100%;
-    background-image: url('../../../assets/images/sun1.jpg');
-    background-size:     cover;                     
-    background-repeat:   no-repeat;
-    background-position: center center;
-}
 .currentWeather{
     display: flex;
     justify-content: center;
@@ -38,4 +37,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.temperture{
+    font-size: 30px;
+}
+
+.space{
+    height: 50px;;
 }

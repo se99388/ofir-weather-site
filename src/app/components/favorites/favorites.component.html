@@ -1,5 +1,4 @@
-
 <div class="favoritesBoard main" *ngIf="this.cityDetails.length">
-        <app-favorite-city *ngFor="let c of cityDetails"  [cityName]="c.name" [dayName]="c.date" [temperture]="c.temperture" [weatherText]="c.weatherText" [tempUnit] = "c.tempUnit" imageSource="https://vortex.accuweather.com/adc2010/images/slate/icons/{{c.icon}}.svg" (click)="getForecastWeather(c.id, c.name)"></app-favorite-city>
+    <app-favorite-city *ngFor="let c of cityDetails" [cityName]="c.name" [dayName]="c.date" [temperture]="c.temperture" [weatherText]="c.weatherText"
+        [tempUnit]="c.tempUnit" imageSource="https://vortex.accuweather.com/adc2010/images/slate/icons/{{c.icon}}.svg" (click)="getForecastWeather(c.id, c.name)"></app-favorite-city>
 </div>
-

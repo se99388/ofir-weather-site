@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-favorite-city',
   templateUrl: './favorite-city.component.html',
   styleUrls: ['./favorite-city.component.css']
 })
-export class FavoriteCityComponent implements OnInit {
+export class FavoriteCityComponent {
     @Input()
     imageSource: string;
     
@@ -24,9 +24,5 @@ export class FavoriteCityComponent implements OnInit {
     @Input()
     weatherText: string;
     
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,8 +1,9 @@
-<div class="weatherDisplay">
-        <img [src]="imageSource" width=50>
-        <div >{{cityName}} </div>
-        <div class="day">{{dayName| date: 'dd/MM/yyyy'}} </div>
-        <div class="day">{{dayName| date: 'EEEE'}} </div>
-        <div >{{temperture| number : '1.0-1'}} ° {{tempUnit}}</div>
-        <div>{{weatherText}}</div>
-    </div>
+<a class="weatherDisplay">
+    <img [src]="imageSource" width=50>
+    <div class="name">{{cityName}} </div>
+    <div class="temperture">{{temperture| number : '1.0-1'}} ° {{tempUnit}}</div>
+    <div>{{weatherText}}</div>
+    <div class="day">{{dayName| date: 'dd/MM/yyyy'}} </div>
+    <div class="day">{{dayName| date: 'EEEE'}} </div>
+
+</a>

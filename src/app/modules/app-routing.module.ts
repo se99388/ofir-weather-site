@@ -8,7 +8,6 @@ const routes: Routes = [
     {path:"forecast-weather", component:ForecastWeatherComponent},
     {path:"favorites", component:FavoritesComponent},
     { path: "", pathMatch: "full", redirectTo: "forecast-weather" },
-
     { path: "**", component: Page404Component }
 ];
 

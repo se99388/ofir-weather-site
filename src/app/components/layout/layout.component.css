@@ -4,7 +4,6 @@
     font-family: 'Gamja Flower', cursive;
     background:#e6faff;
     height: 100%;
-    border: 3px solid black;
 }
 
 .row{
@@ -13,5 +12,6 @@
 
 main{
     border: 3px solid white;
-    padding: 0px;  
+    padding: 0px; 
+    margin: 0 auto; 
 }

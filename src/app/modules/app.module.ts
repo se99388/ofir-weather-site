@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 //material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule, MatButtonModule, MatCheckboxModule, MatSelectModule, MatFormFieldModule, MatIconModule, MatAutocompleteModule, MatDialog } from "@angular/material";
+import { MatInputModule, MatButtonModule, MatSelectModule, MatFormFieldModule, MatIconModule, MatAutocompleteModule } from "@angular/material";
 import { MatDialogModule } from '@angular/material/dialog';
 import { Store } from '../redux/store';
 import { Reducer } from '../redux/reducer';
@@ -49,7 +49,6 @@ import { FavoritesService } from '../services/favorites.service';
         HttpClientModule,
         BrowserAnimationsModule,
         MatButtonModule,
-        MatCheckboxModule,
         ReactiveFormsModule,
         FormsModule,
         MatInputModule,
@@ -73,9 +72,6 @@ export class AppModule {
         if (localStorage.getItem("MyFavoritesCities")) {
             const allFavCities = JSON.parse(localStorage.getItem("MyFavoritesCities"));
             this.favoritesService.addAllFavoriteCities(allFavCities);
-            // for (let i=0; i< allFavCities.length; i++){
-            //     this.favoritesService.addCityToFavorites(allFavCities[i]);
-            // }
         }
     }
 

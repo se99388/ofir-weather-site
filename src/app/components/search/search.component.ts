@@ -41,7 +41,6 @@ export class SearchComponent implements OnInit {
     }
 
     public getApiSearch = () => {
-        console.log("this.searchValue", this.searchValue);
         this.searchService.getSearchByCity(this.searchValue).subscribe(res => {
             if (res) {
                 this.filteredOptions = res.map((item) => {
@@ -60,7 +59,7 @@ export class SearchComponent implements OnInit {
             this.errMessage.text = err.statusText;
             this.errMessage.message = err.message;
             this.errMessageService.openModal(this.errMessage);
-        });       
+        });
     }
 
 

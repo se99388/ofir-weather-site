@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ForecastWeatherService } from '../../services/forecast-weather.service';
 import { ForecastDetails } from '../../models/forecastDetails';
-import { CurrentWeatherService } from '../../services/current-weather.service';
 import { CurrentWeatherDetails } from '../../models/currentWeatherDetails';
 import { NgRedux } from 'ng2-redux';
 import { Store } from '../../redux/store';
@@ -9,7 +7,7 @@ import { Unsubscribe } from 'redux';
 import { FavoritesService } from '../../services/favorites.service';
 import { Error } from '../../models/err';
 import { ErrMessageService } from '../../services/err-message.service';
-import { FavCity } from '../../models/favCity';
+
 
 @Component({
     selector: 'app-forecast-weather',
@@ -23,9 +21,9 @@ export class ForecastWeatherComponent implements OnInit, OnDestroy {
     public existInFavorites: boolean = false;
     public allFavoriteCities: CurrentWeatherDetails[];
     public errMessage = new Error()
-    // public favCity = new CurrentWeatherDetails()
 
-    constructor(private forecastWeatherService: ForecastWeatherService, private favoritesService: FavoritesService, private redux:NgRedux<Store>, private errMessageService:ErrMessageService) { }
+
+    constructor(private favoritesService: FavoritesService, private redux:NgRedux<Store>, private errMessageService:ErrMessageService) { }
 
     ngOnInit() {
         //for the first time
@@ -48,14 +46,7 @@ export class ForecastWeatherComponent implements OnInit, OnDestroy {
 
     public reduxState(){
         this.currentWeatherDetails = this.redux.getState().currentWeatherDetails;
-        this.forecastDetails = this.redux.getState().forecastDetails;
-        // this.forecastWeatherService.getForecast(this.currentWeatherDetails.id).subscribe(defualtWeatherRes => {
-        //     this.forecastDetails = defualtWeatherRes.DailyForecasts;
-        // },err=>{
-        //     this.errMessage.text = err.statusText;
-        //     this.errMessage.message = err.message;
-        //    this.errMessageService.openModal(this.errMessage);
-        // });  
+        this.forecastDetails = this.redux.getState().forecastDetails; 
     }
 
     public reduxStateIsExistInFavorites(){     
@@ -74,13 +65,9 @@ export class ForecastWeatherComponent implements OnInit, OnDestroy {
          
     }
     public addToFavorites(){
-    //    this.favCity.id = this.currentWeatherDetails.id;
-    //    this.favCity.name = this.currentWeatherDetails.name;
         this.favoritesService.addCityToFavorites( this.currentWeatherDetails);
     }
     public RemoveFromFavorites(){
-        // this.favCity.id = this.currentWeatherDetails.id;
-        // this.favCity.name = this.currentWeatherDetails.name;
         this.favoritesService.removeCityFromFavorites(this.currentWeatherDetails);
     }
 

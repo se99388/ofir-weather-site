@@ -4,27 +4,25 @@ import { Store } from '../redux/store';
 import { ActionType } from '../redux/action';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UnitTempertureChangeService {
 
-  constructor(private redux:NgRedux<Store>) { }
+    constructor(private redux: NgRedux<Store>) { }
 
-  public changeToFahrenheit(){
-    console.log("changeToFahrenheit")
-    const action = {
-        type: ActionType.convertCelsiusToFahrenheit,
-        payload: false
+    public changeToFahrenheit() {
+        const action = {
+            type: ActionType.convertCelsiusToFahrenheit,
+            payload: false
+        }
+        this.redux.dispatch(action);
     }
-    this.redux.dispatch(action);
-  }
 
-  public changeToCelsius(){
-    console.log("changeToFahrenheit")
-    const action = {
-        type: ActionType.convertFahrenheitToCelsius,
-        payload: true
+    public changeToCelsius() {
+        const action = {
+            type: ActionType.convertFahrenheitToCelsius,
+            payload: true
+        }
+        this.redux.dispatch(action);
     }
-    this.redux.dispatch(action);
-  }
 }

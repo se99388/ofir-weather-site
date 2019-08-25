@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './display-weather.component.html',
   styleUrls: ['./display-weather.component.css']
 })
-export class DisplayWeatherComponent implements OnInit {
+export class DisplayWeatherComponent {
 
 @Input()
 imageSource: string;
@@ -21,10 +21,5 @@ max: number;
 
 @Input()
 tempUnit: string;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

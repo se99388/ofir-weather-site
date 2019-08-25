@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgRedux } from '../../../../node_modules/ng2-redux';
+import { Store } from '../../redux/store';
 
 
 @Component({
@@ -6,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './navigation.component.html',
     styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
-    constructor() { }
+export class NavigationComponent {
+    constructor(public redux:NgRedux<Store>) { }
 
-    ngOnInit() {
-    }
 }

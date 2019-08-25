@@ -1,4 +1,5 @@
-<p>navigation works!</p>
+<div>
+        <a routerLink="forecast-weather">Current & Forecast weather</a> |
+        <a *ngIf="this.redux.getState().allFavoriteCities.length" routerLink="favorites">Favorites</a>
+</div>
 
-<a routerLink="forecast-weather">Home</a>
-<a routerLink="favorites">Favorites</a>

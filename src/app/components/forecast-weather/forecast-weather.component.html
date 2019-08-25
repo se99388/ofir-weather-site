@@ -17,10 +17,10 @@
                 <div class="day name">{{currentWeatherDetails.name}} </div>
                 <div class="CurrentDisplay">
                     <div>
+                        <div class="temperture"> {{currentWeatherDetails.temperture | number : '1.1-1'}} ° {{currentWeatherDetails.tempUnit}}</div>
+                        <div> {{currentWeatherDetails.weatherText}}</div>
                         <div class="day">{{currentWeatherDetails.date| date: 'dd/MM/yyyy'}} {{currentWeatherDetails.date| date:"HH:mm"}} </div>
                         <div class="day">{{currentWeatherDetails.date| date: 'EEEE'}} </div>
-                        <div> {{currentWeatherDetails.temperture | number : '1.1-1'}} ° {{currentWeatherDetails.tempUnit}}</div>
-                        <div> {{currentWeatherDetails.weatherText}}</div>
                     </div>
                     <div>
                         <img src="https://vortex.accuweather.com/adc2010/images/slate/icons/{{currentWeatherDetails.icon}}.svg" width=100>
@@ -29,13 +29,11 @@
             </div>
 
         </div>
-        <div class="col-12">
-            <div class="forecastBoard col-12">
-                <app-display-weather *ngFor="let f of forecastDetails" imageSource="https://vortex.accuweather.com/adc2010/images/slate/icons/{{f.Day.Icon}}.svg"
-                    [dayName]="f.Date" [min]="f.Temperature.Minimum.Value" [max]="f.Temperature.Maximum.Value" [tempUnit]="f.Temperature.Maximum.Unit"></app-display-weather>
-            </div>
+        <div class="col-12 d-none d-sm-block space"></div>
+
+        <div class="forecastBoard col-12">
+            <app-display-weather *ngFor="let f of forecastDetails" imageSource="https://vortex.accuweather.com/adc2010/images/slate/icons/{{f.Day.Icon}}.svg"
+                [dayName]="f.Date" [min]="f.Temperature.Minimum.Value" [max]="f.Temperature.Maximum.Value" [tempUnit]="f.Temperature.Maximum.Unit"></app-display-weather>
         </div>
     </div>
-
-
 </div>

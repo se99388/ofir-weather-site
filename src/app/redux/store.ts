@@ -1,5 +1,4 @@
 import { CurrentWeatherDetails } from '../models/currentWeatherDetails';
-import { FavCity } from '../models/favCity';
 import { ForecastDetails } from '../models/forecastDetails';
 
 export class Store{
